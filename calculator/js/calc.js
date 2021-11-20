@@ -1,14 +1,9 @@
 "use strict";
 
-let a = +prompt("Enter the first number", "");
-let b = +prompt("Enter the second number", "");
-let operation = prompt("Enter the operation", "");
-
-
-
 function calc(a, b, operation) {
    let result;
-   if (!a || !b || !operation || typeof a !== 'number' || typeof b !== 'number') {
+   const isNotValid = (!a || !b || !operation || typeof a !== 'number' || typeof b !== 'number');
+   if (isNotValid) {
       return "Error";
    }
 
@@ -34,4 +29,4 @@ function calc(a, b, operation) {
    return result;
 }
 
-alert(calc(a, b, operation));
+console.log(calc()));
