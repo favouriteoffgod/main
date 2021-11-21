@@ -1,32 +1,25 @@
 "use strict";
 
 function calc(a, b, operation) {
-   let result;
-   const isNotValid = (!a || !b || !operation || typeof a !== 'number' || typeof b !== 'number');
+
+   const isNotValid = (!a || !b || !operation
+      || typeof a !== 'number' || typeof b !== 'number');
+
+   let operations = {
+      sum: a + b,
+      sub: (a - b),
+      mult: (a * b),
+      div: (a / b),
+      exp: (a ** b),
+   }
+
    if (isNotValid) {
       return "Error";
+   } else if (operation in operations) {
+      return (operations[operation]);
+   } else {
+      return "Unknown operaton";
    }
-
-   switch (operation) {
-      case "sum":
-         result = a + b;
-         break;
-      case "dif":
-         result = a - b;
-         break;
-      case "multi":
-         result = a * b;
-         break;
-      case "div":
-         result = a / b;
-         break;
-      case "exp":
-         result = a ** b;
-         break;
-      default:
-         result = "unknown operation";
-   }
-   return result;
 }
 
-console.log(calc()));
+console.log(calc(5, 4, "sum"));
