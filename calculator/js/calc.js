@@ -6,7 +6,7 @@ function calc(a, b, operation) {
       || typeof a !== 'number' || typeof b !== 'number');
 
    let operations = {
-      sum: a + b,
+      sum: (a + b),
       sub: (a - b),
       mult: (a * b),
       div: (a / b),
